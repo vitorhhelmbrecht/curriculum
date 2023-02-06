@@ -18,12 +18,23 @@
   },
   "plugins": ["react", "prettier"],
   "rules": {
-    "space-before-function-paren": "off"
+    "space-before-function-paren": "off",
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "": "never",
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+   ]
   },
   "settings": {
     "import/resolver": {
       "node": {
-        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+        "paths": ["src"]
       }
     }
   }
