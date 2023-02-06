@@ -1,6 +1,6 @@
 import colors from './colors';
 
-export default {
+const light = {
   primary: colors.white,
 
   headerBackground: colors.gray6,
@@ -10,3 +10,5 @@ export default {
   menuBorderColor: colors.primaryColor,
   selectedMenuItemBorderColor: colors.secondaryColor,
 };
+
+export default light;
