@@ -9,17 +9,7 @@ export default createGlobalStyle`
     }
 
     ::-webkit-scrollbar {
-        width: 9px;
-    }
-    
-    ::-webkit-scrollbar-track {
-        display: none;
-    }
-    
-    ::-webkit-scrollbar-thumb {
-        background-color: rgba(155, 155, 155, 0.5);
-        border-radius: 20px;
-        border: transparent;
+        width: 0px;
     }
 
     body {

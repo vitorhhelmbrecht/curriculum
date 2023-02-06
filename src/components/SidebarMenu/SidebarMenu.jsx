@@ -1,14 +1,15 @@
-import style from './sidebarMenu.module.css';
+import React from 'react';
+import { Container, MenuItem } from './styles';
 
-function SidebarMenu(props) {
-    <div>
-        <nav className={style.navBar}>
-            <ul className={style.navBarNav}>
-                <li><img></img></li>
-                <li>Theme</li>
-            </ul>
-        </nav>
-    </div>
+function SidebarMenu() {
+  return (
+    <Container>
+      <MenuItem selected>item</MenuItem>
+      <MenuItem>item</MenuItem>
+      <MenuItem>item</MenuItem>
+      <MenuItem>item</MenuItem>
+    </Container>
+  );
 }
 
 export default SidebarMenu;

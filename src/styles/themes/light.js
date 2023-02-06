@@ -1,9 +1,12 @@
-import colors from './colors.js';
+import colors from './colors';
 
 export default {
-    primary: colors.white,
-    
-    headerBackground: colors.gray6,
+  primary: colors.white,
 
-    text: colors.black,
-}
+  headerBackground: colors.gray6,
+
+  text: colors.black,
+
+  menuBorderColor: colors.primaryColor,
+  selectedMenuItemBorderColor: colors.secondaryColor,
+};
