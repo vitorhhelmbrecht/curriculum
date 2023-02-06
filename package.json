@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/vitorhhelmbrecht/curriculum#readme",
   "dependencies": {
+    "eslint-config-next": "^13.1.6",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",
     "next": "^13.1.6",
