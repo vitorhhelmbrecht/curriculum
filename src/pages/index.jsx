@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { VscGithubInverted } from 'react-icons/vsc';
 import { MdOutlineMail } from 'react-icons/md';
 import { BsLinkedin } from 'react-icons/bs';
-// import Header from '../components/header/Header';
 import SidebarMenu from '../components/sidebarMenu/SidebarMenu';
 
 import {
