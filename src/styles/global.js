@@ -16,7 +16,7 @@ export default createGlobalStyle`
         background: ${props => props.theme.primary};
         color: ${props => props.theme.text};
         font-size: 14px;
-        font-family: sans-serif;
+        font-family: monospace;
         overflow: overlay;
 
         transition: background 500ms ease-in-out, color 1000ms ease-in-out;

@@ -4,7 +4,19 @@ export const HomeContainer = styled.div`
   display: grid;
   grid-template:
     'header' 50vh
-    'content' 100vh;
+    'content' 1fr;
+`;
+
+export const Header = styled.div`
+  background-color: ${props => props.theme.headerBackground};
+  grid-area: header;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 5%;
+  margin: 0;
+  align-items: center;
+  height: 100%;
 `;
 
 export const RoundFramedImage = styled.img`
@@ -32,6 +44,29 @@ export const VerticalFlexBox = styled.div`
   }
 `;
 
+export const ContactLinks = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 10%;
+
+  a {
+    height: 100%;
+    svg {
+      transition: 100ms ease-out;
+      height: 100%;
+      width: 100%;
+      opacity: 0.4;
+      color: ${props => props.theme.text};
+
+      :hover {
+        cursor: pointer;
+        opacity: 0.8;
+      }
+    }
+  }
+`;
+
 export const Fixed = styled.div`
   position: fixed;
   margin: 20px;
@@ -47,8 +82,15 @@ export const ThemeButton = styled.button`
   cursor: pointer;
 
   svg {
+    transition: 100ms ease-out;
     height: 100%;
     width: 100%;
-    color: ${props => props.theme.iconColor};
+    opacity: 0.4;
+    color: ${props => props.theme.text};
+
+    :hover {
+      cursor: pointer;
+      opacity: 0.8;
+    }
   }
 `;
