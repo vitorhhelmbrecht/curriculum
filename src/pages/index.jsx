@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { VscGithubInverted } from 'react-icons/vsc';
 import { MdOutlineMail } from 'react-icons/md';
 import { BsLinkedin } from 'react-icons/bs';
-import SidebarMenu from '../components/sidebarMenu/SidebarMenu';
 
 import {
   ThemeButton,
@@ -15,16 +14,25 @@ import {
   Header,
 } from '../styles/home';
 import Content from '../components/content/Content';
+import SidebarMenu from '../components/sidebarMenu/SidebarMenu';
 
 function Home(props) {
   const { toggleTheme, themeIcon } = props;
+
+  const contentSectionsIDs = {
+    Who: 'Who am I?',
+    Experience: 'Experience',
+    Graduation: 'Graduation',
+    Hobbies: 'Hobbies',
+    Abilities: 'Abilities',
+  };
 
   return (
     <HomeContainer>
       <Fixed>
         <ThemeButton onClick={toggleTheme}>{themeIcon}</ThemeButton>
       </Fixed>
-      <SidebarMenu />
+      <SidebarMenu textsWithIds={contentSectionsIDs} />
       <Header>
         <RoundFramedImage src="/myPhoto.jpg" />
         <VerticalFlexBox>

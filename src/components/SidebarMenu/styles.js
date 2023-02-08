@@ -1,3 +1,4 @@
+import { Link } from 'react-scroll';
 import styled from 'styled-components';
 
 export const Container = styled.div`
@@ -10,21 +11,20 @@ export const Container = styled.div`
   width: 25vh;
 `;
 
-export const MenuItem = styled.button`
-  --border-color: ${props =>
-    props.selected
-      ? props.theme.selectedMenuItemBorderColor
-      : props.theme.menuBorderColor};
+export const MenuItem = styled(Link)`
+  --border-color: ${props => props.theme.menuBorderColor};
+  --border-selected-color: ${props => props.theme.selectedMenuItemBorderColor};
 
   height: 10%;
-  justify-content: left;
+  width: 100;
   align-items: center;
-  font-size: ${props => (props.selected ? '1.5em' : '1.2em')};
+  font-size: 1.5em;
   margin-left: 2vh;
   border: 0;
   color: ${props => props.theme.text};
   padding-left: 10%;
-  text-align: left;
+  text-align: lest;
+  align-items: center;
 
   transition: 500ms ease-out;
 
@@ -32,11 +32,21 @@ export const MenuItem = styled.button`
     right;
   background-size: 300%;
 
-  border-left: 2px solid var(--border-color);
+  border-left: 5px solid var(--border-color);
+
+  &.active {
+    background-position: left;
+    font-size: 2em;
+    border-color: var(--border-selected-color);
+  }
 
   :hover {
     background-position: left;
     font-size: 1.8em;
     cursor: pointer;
+  }
+
+  &.active:hover {
+    font-size: 2em;
   }
 `;

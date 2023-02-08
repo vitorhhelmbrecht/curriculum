@@ -49,6 +49,8 @@ export const ContactLinks = styled.div`
   align-items: center;
   justify-content: space-between;
   height: 10%;
+  margin-top: 5%;
+  width: 80%;
 
   a {
     height: 100%;
