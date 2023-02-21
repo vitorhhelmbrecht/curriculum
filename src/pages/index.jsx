@@ -3,9 +3,13 @@ import PropTypes from 'prop-types';
 import { VscGithubInverted } from 'react-icons/vsc';
 import { MdOutlineMail } from 'react-icons/md';
 import { BsLinkedin } from 'react-icons/bs';
+import { CgArrowUp } from 'react-icons/cg';
+import { Link } from 'react-scroll';
+import Content from '../components/content/Content';
+import SidebarMenu from '../components/sidebarMenu/SidebarMenu';
 
 import {
-  ThemeButton,
+  NoBackgroundButton,
   Fixed,
   HomeContainer,
   RoundFramedImage,
@@ -13,8 +17,6 @@ import {
   ContactLinks,
   Header,
 } from '../styles/home';
-import Content from '../components/content/Content';
-import SidebarMenu from '../components/sidebarMenu/SidebarMenu';
 
 function Home(props) {
   const { toggleTheme, themeIcon } = props;
@@ -23,17 +25,26 @@ function Home(props) {
     Who: 'Who am I?',
     Experience: 'Experience',
     Graduation: 'Graduation',
+    Skills: 'Skills',
     Hobbies: 'Hobbies',
-    Abilities: 'Abilities',
   };
 
   return (
     <HomeContainer>
       <Fixed>
-        <ThemeButton onClick={toggleTheme}>{themeIcon}</ThemeButton>
+        <NoBackgroundButton onClick={toggleTheme}>
+          {themeIcon}
+        </NoBackgroundButton>
+      </Fixed>
+      <Fixed bottom="0%">
+        <NoBackgroundButton>
+          <Link to="header" spy smooth offset={-400} duration={800}>
+            <CgArrowUp />
+          </Link>
+        </NoBackgroundButton>
       </Fixed>
       <SidebarMenu textsWithIds={contentSectionsIDs} />
-      <Header>
+      <Header id="header">
         <RoundFramedImage src="/myPhoto.jpg" />
         <VerticalFlexBox>
           <h1>Hello, I&apos;m Vitor,</h1>

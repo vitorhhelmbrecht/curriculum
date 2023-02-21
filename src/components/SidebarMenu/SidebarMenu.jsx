@@ -13,7 +13,7 @@ function SidebarMenu(props) {
             to={`${key}`}
             spy
             smooth
-            offset={-100}
+            offset={-400}
             duration={500}
             key={key}
           >

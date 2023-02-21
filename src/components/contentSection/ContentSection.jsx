@@ -1,33 +1,28 @@
-import { useAnimation, useInView } from 'framer-motion';
-import { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import Section from './styles';
+import AnimatedInViewContainer from '../animatedInViewContainer/AnimatedInViewContainer';
 
 function ContentSection(props) {
-  const { children, id } = props;
+  const { children, id, animationDuration } = props;
 
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-  const animation = useAnimation();
-
-  useEffect(() => {
-    if (!isInView) {
-      return;
-    }
-
-    animation.start({
-      x: '0vw',
-      transition: {
-        type: 'spring',
-        duration: 2,
-        bounce: 0.3,
-      },
-    });
-  }, [animation, isInView]);
+  const controlsDefinition = {
+    x: '0vw',
+    transition: {
+      type: 'spring',
+      duration: animationDuration,
+      bounce: 0.3,
+      delayChildren: 2,
+    },
+  };
 
   return (
-    <Section id={id} ref={ref} animate={animation} initial={{ x: '-50vw' }}>
-      {children}
+    <Section id={id}>
+      <AnimatedInViewContainer
+        controlsDefinition={controlsDefinition}
+        initialPosition={{ x: '-50vw' }}
+      >
+        {children}
+      </AnimatedInViewContainer>
     </Section>
   );
 }
@@ -35,6 +30,11 @@ function ContentSection(props) {
 ContentSection.propTypes = {
   children: PropTypes.node.isRequired,
   id: PropTypes.string.isRequired,
+  animationDuration: PropTypes.number,
+};
+
+ContentSection.defaultProps = {
+  animationDuration: 2,
 };
 
 export default ContentSection;

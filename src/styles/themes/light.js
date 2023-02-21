@@ -6,9 +6,12 @@ const light = {
   headerBackground: colors.gray6,
 
   text: colors.black,
+  secondaryText: colors.black2,
 
-  menuBorderColor: colors.primaryColor,
-  selectedMenuItemBorderColor: colors.secondaryColor,
+  iconColor: colors.black,
+
+  menuBorderColor: colors.gray5,
+  selectedMenuItemBorderColor: colors.gray2,
 };
 
 export default light;

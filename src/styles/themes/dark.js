@@ -10,8 +10,8 @@ const dark = {
 
   iconColor: colors.gray4,
 
-  menuBorderColor: colors.gray2,
-  selectedMenuItemBorderColor: colors.gray4,
+  menuBorderColor: colors.gray3,
+  selectedMenuItemBorderColor: colors.gray5,
 };
 
 export default dark;

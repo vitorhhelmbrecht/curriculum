@@ -15,16 +15,14 @@ export const MenuItem = styled(Link)`
   --border-color: ${props => props.theme.menuBorderColor};
   --border-selected-color: ${props => props.theme.selectedMenuItemBorderColor};
 
+  display: flex;
   height: 10%;
-  width: 100;
-  align-items: center;
   font-size: 1.5em;
   margin-left: 2vh;
-  border: 0;
   color: ${props => props.theme.text};
   padding-left: 10%;
-  text-align: lest;
   align-items: center;
+  justify-content: left;
 
   transition: 500ms ease-out;
 
@@ -35,6 +33,7 @@ export const MenuItem = styled(Link)`
   border-left: 5px solid var(--border-color);
 
   &.active {
+    transition: 50ms ease-out;
     background-position: left;
     font-size: 2em;
     border-color: var(--border-selected-color);

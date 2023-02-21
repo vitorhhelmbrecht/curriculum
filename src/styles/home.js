@@ -73,15 +73,14 @@ export const Fixed = styled.div`
   position: fixed;
   margin: 20px;
   right: 0%;
+  bottom: ${props => props.bottom};
 `;
 
-export const ThemeButton = styled.button`
+export const NoBackgroundButton = styled.button`
   width: 4vh;
   height: 4vh;
   background: none;
   border: none;
-
-  cursor: pointer;
 
   svg {
     transition: 100ms ease-out;
