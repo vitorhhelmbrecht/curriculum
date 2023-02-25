@@ -2,62 +2,50 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
 export const Container = styled(motion.div)`
+  --size: clamp(100px, 10vw, 400px);
+
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: repeat(auto-fit, minmax(10vw, 1fr));
-  grid-auto-rows: 15vh;
-  grid-auto-flow: dense;
+  grid-template-columns: repeat(auto-fit, minmax(var(--size), 1fr));
+  grid-auto-rows: var(--size);
 `;
 
-export const Item = styled(motion.div)`
-  grid-column: span ${props => props.widthSpan ?? 1};
-  grid-row: span ${props => props.heightSpan ?? 1};
-
-  transition: all 300ms ease;
-
+export const HexagonImageDiv = styled(motion.div)`
   position: relative;
-
-  div {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-  }
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0 50%);
+  height: 100%;
+  width: 100%;
+  background: ${props => props.theme.menuBorderColor};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 300ms;
 
   h1 {
-    font-size: 1.6em;
-    color: white;
     position: absolute;
     opacity: 0;
+    z-index: 2;
+    font-size: 1.5em;
     transition: 400ms ease-out;
-    margin: auto;
-  }
-
-  span {
-    magin-top: -0.2em;
-  }
-
-  img {
-    object-fit: cover;
-    transition: all 400ms ease;
-  }
-
-  &.fill img {
-    object-fit: fill;
   }
 
   :hover {
-    cursor: pointer;
-  }
+    background: ${props => props.theme.primary};
 
-  :hover img {
-    opacity: 0.3;
-  }
+    img {
+      opacity: 0.2;
+    }
 
-  :hover h1 {
-    opacity: 1;
-    z-index: 1;
+    h1 {
+      opacity: 1;
+    }
   }
+`;
+
+export const HexagonImage = styled.img`
+  width: 95%;
+  height: 95%;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0 50%);
+  object-fit: cover;
+  transition: all 400ms ease;
 `;
