@@ -5,8 +5,8 @@ import { MdOutlineMail } from 'react-icons/md';
 import { BsLinkedin } from 'react-icons/bs';
 import { CgArrowUp } from 'react-icons/cg';
 import { Link } from 'react-scroll';
-import Content from '../components/content/Content';
-import SidebarMenu from '../components/sidebarMenu/SidebarMenu';
+import Content from '../components/content';
+import SidebarMenu from '../components/sidebarMenu';
 
 import {
   NoBackgroundButton,

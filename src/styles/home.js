@@ -9,7 +9,6 @@ export const HomeContainer = styled.div`
 
 export const Header = styled.div`
   background-color: ${props => props.theme.headerBackground};
-  grid-area: header;
   height: 100%;
   display: flex;
   justify-content: center;
